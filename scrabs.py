@@ -55,7 +55,29 @@ points = [
     10,
 ]
 
-letter_to_points = {key:value for key, value in zip(letters, points)}
+letter_to_points = {key: value for key, value in zip(letters, points)}
 # print(letter_to_points)
 letter_to_points[""] = 0
-print(letter_to_points)
+
+
+# print(letter_to_points)
+def score_word(word):
+    point_total = 0
+    for letter in word:
+        point_total += letter_to_points.get(letter, 0)
+    return point_total
+
+
+brownie_points = score_word("BROWNIE")
+print(brownie_points)
+
+player_to_words = {
+    "player 1": ["BLUE", "TENNIS", "EXIT"],
+    "wordNerd": ["EARTH", "EYES", "MACHINE"],
+    "Lexi Con": ["ERASER", "BELLY", "HUSKY"],
+    "Prof Reader": ["ZAP", "COMA", "PERIOD"],
+}
+
+player_points = {}
+for player, words in player_to_words.items():
+        player_points = 0
