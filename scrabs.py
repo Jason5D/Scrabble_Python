@@ -69,7 +69,7 @@ def score_word(word):
 
 
 brownie_points = score_word("BROWNIE")
-print(brownie_points)
+# print(brownie_points)
 
 player_to_words = {
     "player 1": ["BLUE", "TENNIS", "EXIT"],
@@ -78,6 +78,10 @@ player_to_words = {
     "Prof Reader": ["ZAP", "COMA", "PERIOD"],
 }
 
-player_points = {}
+player_to_points = {}
 for player, words in player_to_words.items():
         player_points = 0
+        for word in words:
+             player_points += score_word(word)
+        player_to_points[player] = player_points
+print(player_to_points)
