@@ -88,8 +88,9 @@ def update_point_totals():
     print(player_to_points)
 
 def play_word(player, word):
-     player_to_words[player].append(word)
+     convert_word = word.upper()
+     player_to_words[player].append(convert_word)
      update_point_totals()
-play_word("player 1", "TIME")
+play_word("player 1", "Time")
 
 # print(player_to_words)
